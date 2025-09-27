@@ -31,7 +31,7 @@ export default function App() {
           setData(parsed);
           setOriginalData(JSON.parse(JSON.stringify(parsed)));
           setLoading(false);
-        }, 1200);
+        }, 600);
       },
     });
   };
@@ -57,12 +57,13 @@ export default function App() {
       setOriginalData(JSON.parse(JSON.stringify(books)));
       setLoading(false);
       setCurrentPage(1); // reset to page 1
-    }, 1500);
+    },100);
   };
 
   const handleEdit = (rowIndex, key, value) => {
-    console.log(rowIndex, key, value)
+    // console.log(rowIndex, key, value)
     const updated = [...data];
+    // console.log(updated);
     updated[rowIndex][key] = value;
     setData(updated);
   };
@@ -96,22 +97,20 @@ export default function App() {
   };
 
   // filtering
-  const filteredData = data.filter(
-    (row) =>
+  const filteredData = data
+  .map((row, idx) => ({ row, absoluteIndex: idx }))
+  .filter(
+    ({ row }) =>
       row.Title?.toLowerCase().includes(filter.toLowerCase()) ||
       row.Author?.toLowerCase().includes(filter.toLowerCase()) ||
       String(row.PublishedYear)?.includes(filter)
   );
 
+
   //pagination
   const startIndex = (currentPage - 1) * rowsPerPage;
   const endIndex = startIndex + rowsPerPage;
-  const currentRows = filteredData.slice(startIndex, endIndex);
-  const currentRowsWithIndex = currentRows.map((row, idx) => ({
-  row,
-  absoluteIndex: startIndex + idx
-}));
-  // console.log("current rows", currentRows)
+  const currentRowsWithIndex = filteredData.slice(startIndex, endIndex);
   const totalPages = Math.ceil(filteredData.length / rowsPerPage);
 
   return (
