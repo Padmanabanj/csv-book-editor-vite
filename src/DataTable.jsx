@@ -1,7 +1,10 @@
 export default function DataTable({ data, sortConfig, onSort, onEdit }) {
+  const textAl = {
+  textAlign: "center"
+};
   return (
     <div className="table-container">
-      <table className="styled-table">
+      {data && data.length > 0 ? (<table className="styled-table">
         <thead>
           <tr>
             {data[0] &&
@@ -33,7 +36,9 @@ export default function DataTable({ data, sortConfig, onSort, onEdit }) {
             </tr>
           ))}
         </tbody>
-      </table>
+      </table>) : (<h4 style={textAl}>No Data</h4>)
+      }
+      
     </div>
   );
 }

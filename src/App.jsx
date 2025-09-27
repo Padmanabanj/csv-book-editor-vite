@@ -39,7 +39,7 @@ export default function App() {
   const generateDummyData = () => {
     setLoading(true);
     setTimeout(() => {
-      const books = Array.from({ length: 1000 }, () => ({
+      const books = Array.from({ length: 10000 }, () => ({
         Title: faker.lorem.words(3),
         Author: faker.person.fullName(),
         Genre: faker.helpers.arrayElement([
@@ -139,6 +139,7 @@ export default function App() {
           />
 
           {/* ✅ Pagination Controls */}
+          {data && data.length > 0 &&
           <div className="pagination">
             <button
               disabled={currentPage === 1}
@@ -156,6 +157,7 @@ export default function App() {
               Next
             </button>
           </div>
+}
         </>
       )}
     </div>
