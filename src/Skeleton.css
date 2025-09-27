@@ -1,0 +1,40 @@
+/* Skeleton.css */
+.skeleton-row {
+  display: flex;
+  margin-bottom: 8px;
+}
+.skeleton-cell {
+  height: 35px;
+  flex: 1;
+  margin-right: 10px;
+  border-radius: 4px;
+  background: #e0e0e0;
+  position: relative;
+  overflow: hidden;
+}
+.skeleton-cell:last-child {
+  margin-right: 0;
+}
+
+/* shimmer effect */
+.shimmer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150px;
+  height: 100%;
+  width: 150px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    transparent 100%
+  );
+  animation: shimmer 1.2s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    left: 100%;
+  }
+}

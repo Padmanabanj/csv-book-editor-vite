@@ -1,0 +1,154 @@
+/* General container */
+.app-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 16px;
+  font-family: Arial, sans-serif;
+}
+
+/* Title */
+.app-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+/* Controls Section */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+  justify-content: center;
+}
+
+.controls input[type="file"],
+.controls input[type="text"] {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  flex: 1;
+  min-width: 200px;
+}
+
+.controls input[type="text"]:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.controls button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #007bff;
+  color: white;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.controls button:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Table container */
+.table-container {
+  overflow-x: auto;
+  max-height: 70vh;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Table */
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+.styled-table th,
+.styled-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.styled-table th {
+  cursor: pointer;
+  background: #007bff;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.styled-table tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+.styled-table tr:hover {
+  background: #f1f7ff;
+  transition: background 0.2s;
+}
+
+/* Editable Inputs */
+.styled-table input {
+  border: none;
+  width: 100%;
+  padding: 4px;
+  background: transparent;
+  font-size: 0.9rem;
+}
+.styled-table input:focus {
+  outline: none;
+  background: #e6f0ff;
+  border-radius: 4px;
+}
+
+/* ================== Responsive ================== */
+
+/* Small Screens (Mobile < 600px) */
+@media (max-width: 600px) {
+  .controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .controls button {
+    width: 100%;
+  }
+
+  .controls input[type="file"],
+  .controls input[type="text"] {
+    width: 100%;
+  }
+
+  .styled-table th,
+  .styled-table td {
+    padding: 6px;
+    font-size: 0.8rem;
+  }
+
+  .app-title {
+    font-size: 1.5rem;
+  }
+}
+
+/* Medium Screens (Tablets < 900px) */
+@media (max-width: 900px) {
+  .controls {
+    gap: 8px;
+    justify-content: flex-start;
+  }
+
+  .styled-table th,
+  .styled-table td {
+    font-size: 0.85rem;
+  }
+}
+
+
