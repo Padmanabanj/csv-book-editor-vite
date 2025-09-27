@@ -13,7 +13,7 @@ export default function App() {
   const [originalData, setOriginalData] = useState([]);
   const [filter, setFilter] = useState("");
   const [sortConfig, setSortConfig] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   const [currentPage, setCurrentPage] = useState(1);
   const rowsPerPage = 100;
