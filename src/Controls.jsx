@@ -16,7 +16,7 @@ export default function Controls({
       <button onClick={onReset}>Reset All</button>
       <input
         type="text"
-        placeholder="Filter by Year or Author"
+        placeholder="Find Your Book (by Author / Year / Title / Genre / ISBNs)"
         value={filter}
         onChange={(e) => setFilter(e.target.value)}
       />
