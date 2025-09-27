@@ -97,14 +97,16 @@ export default function App() {
   };
 
   // filtering
-  const filteredData = data
+ const filteredData = data
   .map((row, idx) => ({ row, absoluteIndex: idx }))
-  .filter(
-    ({ row }) =>
-      row.Title?.toLowerCase().includes(filter.toLowerCase()) ||
-      row.Author?.toLowerCase().includes(filter.toLowerCase()) ||
-      String(row.PublishedYear)?.includes(filter)
+  .filter(({ row }) =>
+    Object.values(row).some(
+      (val) =>
+        val &&
+        val.toString().toLowerCase().includes(filter.toLowerCase())
+    )
   );
+
 
 
   //pagination

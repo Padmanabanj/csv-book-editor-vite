@@ -2,6 +2,7 @@ export default function DataTable({ data, sortConfig, onSort, onEdit }) {
   const textAl = {
   textAlign: "center"
 };
+// console.log(data)
   return (
     <div className="table-container">
       {data && data.length > 0 ? (<table className="styled-table">
