@@ -31,7 +31,7 @@ export default function App() {
           setData(parsed);
           setOriginalData(JSON.parse(JSON.stringify(parsed)));
           setLoading(false);
-        }, 600);
+        }, 1300);
       },
     });
   };
@@ -57,7 +57,7 @@ export default function App() {
       setOriginalData(JSON.parse(JSON.stringify(books)));
       setLoading(false);
       setCurrentPage(1); // reset to page 1
-    },100);
+    },1000);
   };
 
   const handleEdit = (rowIndex, key, value) => {
